@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context="com.example.sagar.myapplication.Form">
 
     <TextView
@@ -15,6 +16,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
+        android:textColor="@color/white"
         android:text="City"
         android:textAlignment="center"
         android:textSize="20dp"
@@ -24,12 +26,13 @@
         app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintVertical_bias="0.042" />
 
     <TextView
         android:id="@+id/comment_body"
-        android:layout_width="129dp"
-        android:layout_height="44dp"
+        android:layout_width="354dp"
+        android:textColor="@color/white"
+        android:layout_height="40dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -56,6 +59,7 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="Image"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -67,13 +71,15 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="133dp"
-        android:layout_height="43dp"
+        android:layout_width="178dp"
+        android:layout_height="46dp"
+
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:entries="@array/city_arrays"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
@@ -90,8 +96,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:textColor="@color/white"
         android:inputType="textPersonName"
-        android:hint="Name"
+        android:gravity="top|center"
+        android:hint="Comment"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.529"
@@ -101,8 +110,8 @@
 
     <ImageView
         android:id="@+id/img"
-        android:layout_width="208dp"
-        android:layout_height="157dp"
+        android:layout_width="289dp"
+        android:layout_height="190dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -111,7 +120,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.946" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/get_image"

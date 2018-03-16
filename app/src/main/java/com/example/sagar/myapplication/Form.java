@@ -31,6 +31,7 @@ public class Form extends AppCompatActivity {
     int RESULT_LOAD_IMAGE = 100;
     Bitmap bitmaps;
     ImageView img;
+    ///Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView);
 
 
     @Override
@@ -61,9 +62,17 @@ public class Form extends AppCompatActivity {
         categories.add("Jaipur");
         categories.add("Kota");
         categories.add("Udaipur");
+        Intent intent = getIntent();
+        Bitmap camera_img_bitmap = (Bitmap) intent
+                .getParcelableExtra("BitmapImage");
+        if (camera_img_bitmap != null) {
+            img.setImageBitmap(camera_img_bitmap);
+        }
 
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, categories);
         spinner.setAdapter(dataAdapter);
 
 
@@ -84,7 +93,7 @@ public class Form extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == RESULT_LOAD_IMAGE) {
+        if (resultCode == RESULT_OK && requestCode == RESULT_LOAD_IMAGE && null!=data) {
             Uri imageUri = data.getData();
 
             ImageView imageView=findViewById(R.id.img);

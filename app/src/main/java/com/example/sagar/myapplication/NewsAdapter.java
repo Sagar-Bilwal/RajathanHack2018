@@ -24,6 +24,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     private Context context;
     private ArrayList<String> descriptions;
 
+
     private ArrayList<Integer> urlsToImage;
 
     private int[] androidColors;
@@ -52,11 +53,18 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         int randomColor = androidColors[new Random().nextInt(androidColors.length)];
         holder.linearLayout.setBackgroundColor(randomColor);
         Picasso.with(context).load(urlsToImage.get(position)).into(holder.imageView);
+//        holder.setItemClickListener(new ItemClickListener() {
+//            @Override
+//            public void onClick(View view, int position) {
+//                Toast.makeText(context, titles.get(position), Toast.LENGTH_LONG);
+//
+//            }
+//        });
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ///context.startActivity(new Intent(context, Main2Activity.class).putExtra("url", urls.get(position)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-                Toast.makeText(context, titles.get(position), Toast.LENGTH_LONG);
+                Toast.makeText(context, titles.get(position), Toast.LENGTH_LONG).show();
 
             }
         });
@@ -70,7 +78,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         return titles.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private ItemClickListener itemClickListener;
+
         public TextView title, description;
         public ImageView imageView;
         public LinearLayout linearLayout;
@@ -78,10 +89,23 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
         public ViewHolder(View itemView) {
             super(itemView);
+
             title = (TextView) itemView.findViewById(R.id.textView1);
             imageView = (ImageView) itemView.findViewById(R.id.imageview);
             linearLayout = (LinearLayout) itemView.findViewById(R.id.linearLayout);
             description = (TextView) itemView.findViewById(R.id.textView2);
+            itemView.setOnClickListener(this);
+
+        }
+        public void setItemClickListener(ItemClickListener itemClickListener){
+
+            this.itemClickListener = itemClickListener;
+        }
+
+        @Override
+        public void onClick(View v) {
+            itemClickListener.onClick(v, getAdapterPosition());
+
         }
     }
 }
