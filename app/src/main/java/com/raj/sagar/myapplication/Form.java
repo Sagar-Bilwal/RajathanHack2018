@@ -13,16 +13,20 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
 
 public class Form extends AppCompatActivity {
 
     int RESULT_LOAD_IMAGE = 100;
     Bitmap bitmaps;
     ImageView img;
+
     ///Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView);
 
 
@@ -107,6 +111,7 @@ public class Form extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.send:
                 Toast.makeText(getApplicationContext(), "Sending data", Toast.LENGTH_LONG).show();
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

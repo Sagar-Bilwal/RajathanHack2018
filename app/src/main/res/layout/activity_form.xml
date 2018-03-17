@@ -9,16 +9,16 @@
 
     <TextView
         android:id="@+id/city"
-        android:layout_width="129dp"
-        android:layout_height="44dp"
+        android:layout_width="127dp"
+        android:layout_height="46dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:gravity="center"
+        android:gravity="center|left"
+        android:paddingLeft="9dp"
+        android:text="City :"
         android:textColor="@color/white"
-        android:text="City"
-        android:textAlignment="center"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,25 +29,25 @@
         app:layout_constraintVertical_bias="0.042" />
 
     <TextView
-        android:id="@+id/comment_body"
+        android:id="@+id/commentHeader"
         android:layout_width="354dp"
-        android:textColor="@color/white"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="Comment"
-        android:textAlignment="center"
+        android:gravity="center|left"
+        android:paddingLeft="12dp"
+        android:text="Comment :"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.195" />
+        app:layout_constraintVertical_bias="0.173" />
 
     <TextView
         android:id="@+id/image"
@@ -66,13 +66,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.558" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="178dp"
-        android:layout_height="46dp"
+        android:layout_width="205dp"
+        android:layout_height="47dp"
 
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -88,9 +87,9 @@
         app:layout_constraintVertical_bias="0.037" />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="406dp"
-        android:layout_height="43dp"
+        android:id="@+id/comment_body"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -99,19 +98,19 @@
         android:gravity="top|center"
         android:hint="Comment"
         android:inputType="textPersonName"
+        android:paddingLeft="8dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.357" />
+        app:layout_constraintVertical_bias="0.32" />
 
     <ImageView
         android:id="@+id/img"
-        android:layout_width="289dp"
-        android:layout_height="190dp"
+        android:layout_width="344dp"
+        android:layout_height="215dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -135,7 +134,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.833"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -26,6 +27,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class Login extends AppCompatActivity {
+
 
     SignInButton btn;
     GoogleApiClient mGoogleApiClient;
@@ -76,6 +78,7 @@ public class Login extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 signIn();
             }
         });
